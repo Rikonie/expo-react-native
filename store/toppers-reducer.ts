@@ -4,7 +4,7 @@ import {combineReducers} from "redux";
 
 const toppersPageInfo = createReducer<any>(null)
     .handleAction(Actions.toppers.toppersLoading.success, (state:any, action:any) => {
-        return action.payload;
+        return action.payload.items;
     });
 
 export const toppersReducer = () =>

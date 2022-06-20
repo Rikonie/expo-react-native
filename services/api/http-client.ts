@@ -19,12 +19,6 @@ export class HttpClient {
             this._handleError,
         );
         this.instance.interceptors.request.use(config => {
-            // if (config.headers) {
-            //     config.headers['Access-Control-Allow-Headers'] = "Access-Control-Allow-Headers, Access-Control-Allow-Origin, Authorization";
-            //     config.headers['Access-Control-Allow-Origin'] = "*";
-            //     config.headers['Access-Control-Allow-Credentials'] = "true";
-            //     config.headers['Content-Type'] ="application/json";
-            // }
             return config;
         });
     };

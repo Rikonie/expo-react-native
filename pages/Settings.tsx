@@ -16,7 +16,7 @@ export const Settings =()=> {
             <Text>
                 Вы вошли как 
             </Text>
-            <Button onPress={()=>clickAuthOut()} title='Выход'/>
+            <Button onPress={clickAuthOut} title='Выход'/>
         </SafeAreaView>
     )
 };

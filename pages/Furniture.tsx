@@ -3,23 +3,24 @@ import {useSelector} from "react-redux";
 import {itemsSelector} from "../selectors/items-selector";
 import {useAppDispatch} from "../store/app-dispatch";
 import {Actions} from "../store/actions";
-import {cushionsPageSelector} from "../selectors/cushions-page-selector";
+import {furniturePageSelector} from "../selectors/furniture-selector";
 import {useFocusEffect} from "@react-navigation/core";
-import {PagesComponent} from "../components/pages-components";
+import {PagesItemsListComponent} from "../components/PagesComponents";
 
-export const Cushions =()=> {
 
-    const items:any = useSelector(cushionsPageSelector);
+export const Furniture =()=> {
+
+    const items:Item[] = useSelector(furniturePageSelector) as Item[];
     const infoItems:any = useSelector(itemsSelector);
 
     const dispatch = useAppDispatch();
     useFocusEffect(
         React.useCallback(() => {
-            dispatch(Actions.cushions.cushionsOpened());
+            dispatch(Actions.furniture.furnitureOpened());
         }, [dispatch])
     );
 
     return (
-        <PagesComponent infoItems={infoItems} items={items} action={Actions.cushions.cushionsOpened()}/>
+        <PagesItemsListComponent infoItems={infoItems} items={items} action={Actions.furniture.furnitureOpened()}/>
     )
 };

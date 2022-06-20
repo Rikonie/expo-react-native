@@ -3,7 +3,7 @@ import {Button, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
 import {useAppDispatch} from "../store/app-dispatch";
 import {Actions} from "../store/actions";
-import {User} from "../models/user";
+import {User} from "../types/user";
 import {useSelector} from "react-redux";
 import {resultAuthSelector} from "../selectors/token-selector";
 
@@ -14,7 +14,7 @@ export const Login = () => {
     const dispatch = useAppDispatch();
 
     const clickAuth = () => {
-        let u = new User(username, password);
+        let u:User = {login: username, password: password};
         console.log("Login", u);
         dispatch(Actions.auth.auth.request(u));
     };
@@ -25,7 +25,7 @@ export const Login = () => {
             <Text style={styles.text}>Авторизация</Text>
             <TextInput
                 defaultValue={username}
-                onChangeText={text => setUsername(text)}
+                onChangeText={setUsername}
                 placeholder='Логин'
                 style={styles.input}
             />

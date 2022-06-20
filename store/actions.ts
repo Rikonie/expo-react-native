@@ -1,8 +1,9 @@
 import {ActionType, createAction, createAsyncAction, StateType} from "typesafe-actions";
 import {rootReducer} from "../root/root";
-import {User} from "../models/user";
-import {IssuedItem} from "../classes/issued-item";
-import {SetStatus} from "../classes/set-status";
+import {User} from "../types/user";
+import {IssuedItem} from "../types/issued-item";
+import {SetStatus} from "../types/set-status";
+import {Items} from "../types/items";
 
 const chargesOpened = createAction('@@charges-opened')();
 const anotherOpened = createAction('@@another-opened')();
@@ -36,7 +37,7 @@ const chargesLoading = createAsyncAction(
     '@@charges-loading/request',
     '@@charges-loading/success',
     '@@charges-loading/failure'
-)<number, any, Error>();
+)<number, Item[], Error>();
 
 const itemGroupsLoading = createAsyncAction(
     '@@itemGroups-loading/request',
@@ -60,31 +61,31 @@ const anotherLoading = createAsyncAction(
     '@@another-loading/request',
     '@@another-loading/success',
     '@@another-loading/failure'
-)<number, any, Error>();
+)<number, Item[], Error>();
 
 const equipmentLoading = createAsyncAction(
     '@@equipment-loading/request',
     '@@equipment-loading/success',
     '@@equipment-loading/failure'
-)<number, any, Error>();
+)<number, Item[], Error>();
 
 const furnitureLoading = createAsyncAction(
     '@@furniture-loading/request',
     '@@furniture-loading/success',
     '@@furniture-loading/failure'
-)<number, any, Error>();
+)<number, Item[], Error>();
 
 const toppersLoading = createAsyncAction(
     '@@toppers-loading/request',
     '@@toppers-loading/success',
     '@@toppers-loading/failure'
-)<number, any, Error>();
+)<number, Item[], Error>();
 
 const cushionsLoading = createAsyncAction(
     '@@cushions-loading/request',
     '@@cushions-loading/success',
     '@@cushions-loading/failure'
-)<number, any, Error>();
+)<number, Item[], Error>();
 
 const itemsLoading = createAsyncAction(
     '@@items-loading/request',

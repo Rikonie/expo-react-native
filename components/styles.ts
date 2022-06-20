@@ -1,14 +1,16 @@
 import {StyleSheet} from "react-native";
 
+const colorBack = '#CCEEEE';
+
 export const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#CCEEEE',
+        backgroundColor: colorBack,
         display: "flex",
         flex:1,
         flexDirection: "column",
     },
     containerForNewItem: {
-        backgroundColor: '#CCEEEE',
+        backgroundColor: colorBack,
         display: "flex",
         flex:1,
         flexDirection: "column",
@@ -87,7 +89,7 @@ export const styles = StyleSheet.create({
     buttonOnBack:{
         alignItems:"flex-start",
         paddingLeft: 20,
-        backgroundColor: '#CCEEEE',
+        backgroundColor: colorBack,
         paddingTop: 10
     }
 });

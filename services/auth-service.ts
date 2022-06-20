@@ -1,5 +1,5 @@
 import {HttpClient} from "./api/http-client";
-import {User} from "../models/user";
+import {User} from "../types/user";
 
 export interface IAuthService {
     token(user: User): Promise<any>

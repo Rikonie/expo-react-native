@@ -1,11 +1,7 @@
-class ItemGroup {
+interface ItemGroup {
     id: number;
     title: string;
 
-    constructor(id: number, title: string) {
-        this.id = id;
-        this.title = title;
-    }
 }
 
 export const itemGroupsDictionary: ItemGroup[] = [{"id":1,"title":"\u041c\u0435\u043d\u044e \u043f\u043e\u0434\u0443\u0448\u0435\u043a"},
@@ -15,12 +11,14 @@ export const itemGroupsDictionary: ItemGroup[] = [{"id":1,"title":"\u041c\u0435\
     {"id":6,"title":"\u041c\u0435\u0431\u0435\u043b\u044c"},
     {"id":7,"title":"\u0418\u043d\u043e\u0435, \u0432\u0430\u0437\u044b,... (\u0421\u041f\u0438\u0420 \u0438 \u0421\u0421\u041f)"}];
 
+const unknown = 'unknown';
+
 export const GetItemGroupById =(id: number)=> {
     let res = itemGroupsDictionary.find(a=> a.id == id);
-    return !!res? res.title: 'unknown';
+    return !!res? res.title: unknown;
 };
 
 export const GetItemGroupByTitle =(title: string)=> {
     let res = itemGroupsDictionary.find(a=> a.title == title);
-    return !!res? res.id: 'unknown';
+    return !!res? res.id: unknown;
 };

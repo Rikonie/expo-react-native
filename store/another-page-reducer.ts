@@ -4,7 +4,7 @@ import {combineReducers} from "redux";
 
 const anotherPageInfo = createReducer<any>(null)
     .handleAction(Actions.another.anotherLoading.success, (state:any, action:any) => {
-        return action.payload;
+        return action.payload.items;
     });
 
 export const anotherReducer = () =>

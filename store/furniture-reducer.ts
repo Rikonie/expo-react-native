@@ -4,7 +4,7 @@ import {combineReducers} from "redux";
 
 const furniturePageInfo = createReducer<any>(null)
     .handleAction(Actions.furniture.furnitureLoading.success, (state:any, action:any) => {
-        return action.payload;
+        return action.payload.items;
     });
 
 export const furnitureReducer = () =>

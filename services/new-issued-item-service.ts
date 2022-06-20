@@ -1,5 +1,5 @@
 import {HttpClient} from "./api/http-client";
-import {IssuedItem} from "../classes/issued-item";
+import {IssuedItem} from "../types/issued-item";
 
 export interface INewItemService {
     issuedItem(issuedItem: IssuedItem): Promise<any>

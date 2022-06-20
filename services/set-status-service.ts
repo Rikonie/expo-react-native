@@ -1,5 +1,5 @@
 import {HttpClient} from "./api/http-client";
-import {SetStatus} from "../classes/set-status";
+import {SetStatus} from "../types/set-status";
 
 
 export interface ISetStatusService {

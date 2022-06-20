@@ -5,11 +5,11 @@ import {useAppDispatch} from "../store/app-dispatch";
 import {Actions} from "../store/actions";
 import {itemsSelector} from "../selectors/items-selector";
 import {useFocusEffect} from "@react-navigation/core";
-import {PagesComponent} from "../components/pages-components";
+import {PagesItemsListComponent} from "../components/PagesComponents";
 
 export const Charges = () => {
 
-    const items: any = useSelector(chargesSelector);
+    const items: Item[] = useSelector(chargesSelector) as Item[];
     const infoItems: any = useSelector(itemsSelector);
 
     const dispatch = useAppDispatch();
@@ -21,7 +21,7 @@ export const Charges = () => {
     );
 
     return (
-        <PagesComponent infoItems={infoItems} items={items} action={Actions.charges.chargesOpened()}/>
+        <PagesItemsListComponent infoItems={infoItems} items={items} action={Actions.charges.chargesOpened()}/>
     )
 };
 
